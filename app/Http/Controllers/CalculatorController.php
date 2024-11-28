@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HelloCalculatorController extends Controller
+class CalculatorController extends Controller
 {
     public function add($num1, $num2) 
     { 
