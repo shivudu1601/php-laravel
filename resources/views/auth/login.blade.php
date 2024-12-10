@@ -25,7 +25,7 @@ border-top-right-radius: 0;
 @endsection
 @section('content')
 <main class="form-signin w-100 m-auto">
-<form action="#" method="post">
+<form action="{{ route('authlogin.post') }}" method="post">
 @csrf
 <h1 class="h3 mb-3 fw-normal">Login</h1>
 <div class="form-floating">
@@ -64,7 +64,7 @@ Remember me
 @endif
 <button class="btn btn-primary w-100 py-2" type="submit">Sign
 in</button>
-<a href="" class="text-center">Create new account</a>
+<a href="{{ route('authregister') }}" class="text-center">Create new account</a>
 <p class="mt-5 mb-3 text-secondary">&copy; 2017-2024</p>
 </form>
 </main>
