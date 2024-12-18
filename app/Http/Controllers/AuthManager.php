@@ -64,4 +64,9 @@ else
 return redirect(route('authregister'))->with('error', 'Failed to create user');
 }
  }
+ public function logout()
+ { 
+    Auth::logout(); 
+return redirect('login'); 
+}
 }
