@@ -15,14 +15,16 @@ id="navbarText">
 href="#">Home</a> 
                 </li> 
                 <li class="nav-item"> 
-                    <a class="nav-link" href="#">Features</a> 
+                    <a class="nav-link" href="{{ route('products') }}">Products</a> 
                 </li> 
-                @auth 
                 <li class="nav-item"> 
-                    <a class="nav-link" href="{{ route('logout') 
-}}">Logout</a> 
+                    <a class="nav-link" href="{{ route('categories') }}">categories</a> 
+                </li>
+                
+                <li class="nav-item"> 
+                    <a class="nav-link" href="{{ route('logout') }}">Logout</a> 
                 </li> 
-                @endauth 
+                
             </ul> 
         </div> 
     </div> 

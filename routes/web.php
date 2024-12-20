@@ -23,10 +23,12 @@ Route::get('/register', [UserController::class, 'register']);
 
 // Login and registration routes 
 
- Route::get('authlogin', [App\Http\Controllers\AuthManager::class, 'login'])->name('authlogin'); 
+Route::get('authlogin', [App\Http\Controllers\AuthManager::class, 'login'])->name('authlogin');
 Route::get('authregister', [App\Http\Controllers\AuthManager::class, 'register'])->name('authregister');
-Route::post('/authlogin', 'App\Http\Controllers\AuthManager@loginPost')->name('authlogin.post'); 
+Route::post('/authlogin', 'App\Http\Controllers\AuthManager@loginPost')->name('authlogin.post');
 Route::post('/authregister', 'App\Http\Controllers\AuthManager@registerPost')->name('authregister.post');
 Route::get('/home', 'App\Http\Controllers\ProductsManager@index')->name('home');
 Route::get('/login', 'App\Http\Controllers\AuthManager@login')->name('login');
-Route::get('logout', [App\Http\Controllers\AuthManager::class,'logout'])->name('logout');
+Route::get('logout', [App\Http\Controllers\AuthManager::class, 'logout'])->name('logout');
+Route::get('products', [App\Http\Controllers\ProductsManager::class, 'Product'])->name('products');
+Route::get('categories', [App\Http\Controllers\CategoriesManager::class, 'category'])->name('categories');

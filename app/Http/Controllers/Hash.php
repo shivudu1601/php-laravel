@@ -8,6 +8,6 @@ class Hash extends Controller
 {
     public function Hash()
     {
-        
+
     }
 }
