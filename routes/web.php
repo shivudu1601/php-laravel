@@ -32,3 +32,7 @@ Route::get('/login', 'App\Http\Controllers\AuthManager@login')->name('login');
 Route::get('logout', [App\Http\Controllers\AuthManager::class, 'logout'])->name('logout');
 Route::get('products', [App\Http\Controllers\ProductsManager::class, 'Product'])->name('products');
 Route::get('categories', [App\Http\Controllers\CategoriesManager::class, 'category'])->name('categories');
+Route::get('products/{slug}', [App\Http\Controllers\ProductsManager::class, 'show'])->name('products.details');
+Route::middleware('auth')->group(function(){
+    Route::get('/cart/{id}', [App\Http\Controllers\ProductsManager::class, 'addToCart'])->name('cart.add');
+});
