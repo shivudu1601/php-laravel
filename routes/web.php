@@ -7,6 +7,7 @@ use App\Http\Controllers\HelloShivaniController;
 use App\Http\Controllers\CalculatorController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductsManager;
+use App\Http\Controllers\CartController;
 
 
 Route::get('/', function () {
@@ -34,5 +35,11 @@ Route::get('products', [App\Http\Controllers\ProductsManager::class, 'Product'])
 Route::get('categories', [App\Http\Controllers\CategoriesManager::class, 'category'])->name('categories');
 Route::get('products/{slug}', [App\Http\Controllers\ProductsManager::class, 'show'])->name('products.details');
 Route::middleware('auth')->group(function(){
-    Route::get('/cart/{id}', [App\Http\Controllers\ProductsManager::class, 'addToCart'])->name('cart.add');
+Route::get('/cart/{id}', [App\Http\Controllers\ProductsManager::class, 'addToCart'])->name('cart.add');
+Route::middleware('auth')->group(function () {
+Route::get('/cart', [CartController::class, 'cart'])->name('cart.index'); // View cart // 
+Route::put('/cart/update/{id}', [CartController::class, 'updateCart'])->name('cart.update'); // Update cart quantity
+Route::delete('/cart/remove/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove'); // Remove from cart
+    });
+
 });
